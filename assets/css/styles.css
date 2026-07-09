@@ -10,6 +10,9 @@
     --card-bg: var(--white);
     --text-color: var(--secondary);
     --nav-bg: var(--white);
+    --map-filter: none;
+    --footer-bg: var(--light);
+    --footer-text: var(--secondary);
 }
 
 [data-theme="dark"] {
@@ -22,6 +25,9 @@
     --text-color: #e0e0e0;
     --nav-bg: #1e1e1e;
     --shadow: 0 4px 6px rgba(0,0,0,0.3);
+    --map-filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    --footer-bg: #1e1e1e;
+    --footer-text: #e0e0e0;
 }
 
 * {
@@ -257,11 +263,12 @@ nav {
 }
 
 footer {
-    background: var(--dark);
-    color: var(--white);
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 40px 0;
     text-align: center;
     margin-top: 60px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .theme-toggle {
@@ -288,4 +295,85 @@ footer {
     .section-header { flex-direction: column; align-items: flex-start; }
     .nav-links { margin-bottom: 10px; }
     .theme-toggle { margin-left: 0; margin-top: 10px; }
+}
+
+/* Contact Page Styles */
+.contact-content {
+    padding: 60px 0;
+    background-color: var(--bg-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.contact-info {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h1 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 30px;
+}
+
+.contact-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.contact-item a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 100%;
+    background: var(--card-bg);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    border: 0;
+    transition: filter 0.3s ease;
+    filter: var(--map-filter);
+    color-scheme: light; /* Force light scheme to prevent double inversion */
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .map-container {
+        height: 300px;
+    }
 }
