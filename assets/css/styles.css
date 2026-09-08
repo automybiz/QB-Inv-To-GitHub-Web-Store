@@ -72,6 +72,19 @@ nav {
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.logo a {
+    text-decoration: none;
+    border: none;
 }
 
 .nav-links {
