@@ -13,6 +13,9 @@
     --map-filter: none;
     --footer-bg: var(--light);
     --footer-text: var(--secondary);
+    --logo-height: 50px;
+    --logo-padding: 0px;
+    --logo-filter: none;
 }
 
 [data-theme="dark"] {
@@ -28,6 +31,7 @@
     --map-filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
     --footer-bg: #1e1e1e;
     --footer-text: #e0e0e0;
+    --logo-filter: none; /* Add this here so it can be easily adjusted for dark mode */
 }
 
 * {
@@ -74,12 +78,14 @@ nav {
     letter-spacing: 1px;
     display: flex;
     align-items: center;
+    padding: var(--logo-padding);
 }
 
 .logo img {
-    height: 50px;
+    height: var(--logo-height);
     width: auto;
     display: block;
+    filter: var(--logo-filter);
 }
 
 .logo a {
