@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroPartsWest Store</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">EuroPartsWest</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="https://www.ebay.com/str/europartswestllc" target="_blank">eBay Store</a></li>
+                <li><a href="inquiry.html">Inquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-slides">
+                <!-- Slides will be added by JS -->
+            </div>
+            <div class="hero-content">
+                <div class="container">
+                    <h1>Premium Porsche Parts</h1>
+                    <p>Specializing in OEM and performance parts for your 911, GT3, and classic Porsche models.</p>
+                    <a href="#products" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products container">
+            <div class="section-header">
+                <h2>Our Inventory</h2>
+                <div class="search-bar">
+                    <select id="sourceFilter" class="filter-select">
+                        <option value="all">All Sources</option>
+                        <option value="eBay">eBay</option>
+                        <option value="QuickBooks">QuickBooks</option>
+                    </select>
+                    <input type="text" id="productSearch" placeholder="Search parts...">
+                </div>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded here by JavaScript -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EuroPartsWest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
